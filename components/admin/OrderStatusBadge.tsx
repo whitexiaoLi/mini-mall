@@ -7,6 +7,7 @@ const statusConfig: Record<string, { label: string; className: string }> = {
   PAID: { label: "已支付", className: "bg-blue-100 text-blue-800" },
   SHIPPED: { label: "已发货", className: "bg-purple-100 text-purple-800" },
   DELIVERED: { label: "已送达", className: "bg-green-100 text-green-800" },
+  COMPLETED: { label: "已完成", className: "bg-green-100 text-green-800" },
   CANCELLED: { label: "已取消", className: "bg-gray-100 text-gray-600" },
 };
 

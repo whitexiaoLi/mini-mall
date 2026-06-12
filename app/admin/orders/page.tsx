@@ -20,6 +20,7 @@ export default async function AdminOrdersPage({
     { value: "PAID", label: "已支付" },
     { value: "SHIPPED", label: "已发货" },
     { value: "DELIVERED", label: "已送达" },
+    { value: "COMPLETED", label: "已完成" },
     { value: "CANCELLED", label: "已取消" },
   ];
 
@@ -115,8 +116,8 @@ export default async function AdminOrdersPage({
                       {order.status === "SHIPPED" && (
                         <StatusButton
                           orderId={order.id}
-                          status="DELIVERED"
-                          label="标记送达"
+                          status="COMPLETED"
+                          label="标记完成"
                           action={updateOrderStatus}
                         />
                       )}

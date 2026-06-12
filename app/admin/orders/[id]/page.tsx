@@ -112,7 +112,7 @@ function StatusActions({
         </>
       )}
       {currentStatus === "SHIPPED" && (
-        <StatusForm orderId={orderId} status="DELIVERED" label="✅ 标记已送达" />
+        <StatusForm orderId={orderId} status="COMPLETED" label="✅ 标记已完成" />
       )}
     </div>
   );

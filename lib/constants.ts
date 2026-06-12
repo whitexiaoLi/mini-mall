@@ -4,17 +4,17 @@ export const ORDER_STATUSES = [
   "PENDING",
   "PAID",
   "SHIPPED",
-  "DELIVERED",
+  "COMPLETED",
   "CANCELLED",
 ] as const;
 
 export type OrderStatus = (typeof ORDER_STATUSES)[number];
 
-/** 合法状态流转：每个状态可以转到的下一个状态 */
+/** 合法状态流转：PENDING → PAID → SHIPPED → COMPLETED，任意状态可转 CANCELLED */
 export const ORDER_TRANSITIONS: Record<OrderStatus, OrderStatus[]> = {
   PENDING: ["PAID", "CANCELLED"],
   PAID: ["SHIPPED", "CANCELLED"],
-  SHIPPED: ["DELIVERED"],
-  DELIVERED: [],
+  SHIPPED: ["COMPLETED", "CANCELLED"],
+  COMPLETED: ["CANCELLED"],
   CANCELLED: [],
 };
